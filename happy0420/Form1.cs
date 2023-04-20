@@ -46,5 +46,22 @@ namespace happy0420
                 lsbNevek.Items.Add(sr.ReadLine()!);
             }
         }
+
+        private void btnTorles_Click(object sender, EventArgs e)
+        {
+            lsbNevek.Items.Remove(lsbNevek.SelectedItem);
+        }
+
+        private void txtNev_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                OnBtnRogzitClick(null, null);
+            }
+        }
     }
 }
